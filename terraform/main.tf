@@ -68,5 +68,4 @@ module "instance" {
 
 resource "aws_ebs_volume" "i" {
   availability_zone = "${var.region}a"
-  size              = 40
 }
