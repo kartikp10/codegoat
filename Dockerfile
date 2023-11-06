@@ -3,8 +3,7 @@ FROM ubuntu:jammy-20221020
 # Disable Prompt During Packages Installation
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Update Ubuntu Software repository
-RUN apt update
+HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1
 
 # Install nginx, php-fpm and supervisord from ubuntu repository
 RUN apt install -y nginx php-fpm supervisor && \
